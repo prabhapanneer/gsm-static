@@ -1,3 +1,9 @@
+node_modules/
+dist/
+public/
+
 contact-server/node_modules/
 contact-server/.env
 contact-server/.env.local
+.env
+.env.local
