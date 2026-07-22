@@ -5,16 +5,21 @@ import { assetUrl } from '../lib/assetUrl';
 
 export function TopbarNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const productsRef = useRef<HTMLLIElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const closeMobile = useCallback(() => {
     setMobileOpen(false);
+    setMobileProductsOpen(false);
   }, []);
 
   const toggleMobile = useCallback(() => {
-    setMobileOpen((o) => !o);
+    setMobileOpen((o) => {
+      if (o) setMobileProductsOpen(false);
+      return !o;
+    });
   }, []);
 
   const clearCloseTimer = useCallback(() => {
@@ -74,12 +79,19 @@ export function TopbarNav() {
       <div className="topbar" id="top">
         <div className="topbar-inner">
           <div className="topbar-left">
-            <span>📍 Puzhuthivakkam, Chennai - 600091</span>
-            <span>🕐 Mon – Fri | 10:00 AM – 6:00 PM</span>
+            <span>Puzhuthivakkam, Chennai</span>
+            <span className="topbar-sep" aria-hidden="true">
+              ·
+            </span>
+            <span>Mon – Fri · 10 AM – 6 PM</span>
           </div>
           <div className="topbar-right">
-            <a href="tel:+919840211485">📞 +91 98402 11485</a>
-            <a href="mailto:info@gsminvestservices.com">✉ info@gsminvestservices.com</a>
+            <a href="tel:+919840211485" className="topbar-phone">
+              +91 98402 11485
+            </a>
+            <a href="mailto:info@gsminvestservices.com" className="topbar-mail">
+              info@gsminvestservices.com
+            </a>
             <span className="arn-pill">ARN 174939</span>
           </div>
         </div>
@@ -114,27 +126,15 @@ export function TopbarNav() {
               >
                 Products
                 <span className="nav-dropdown-chevron" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 12 12"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2.5 4.5L6 8l3.5-3.5" />
                   </svg>
                 </span>
               </button>
-              <div
-                className="nav-dropdown-menu"
-                id="products-menu"
-                role="menu"
-                aria-hidden={!productsOpen}
-              >
+              <div className="nav-dropdown-menu" id="products-menu" role="menu" aria-hidden={!productsOpen}>
                 {PRODUCT_LINKS.map((p) => (
                   <Link key={p.to} to={p.to} role="menuitem" onClick={closeProducts}>
-                    {p.menuLabel}
+                    {p.label}
                   </Link>
                 ))}
               </div>
@@ -152,36 +152,23 @@ export function TopbarNav() {
               <a href="/#books">Books</a>
             </li>
             <li>
-              <a
-                href="https://wealthelite.in/client-login"
-                className="nav-cta"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://wealthelite.in/client-login" className="nav-cta" target="_blank" rel="noopener noreferrer">
                 Client Login →
               </a>
             </li>
           </ul>
           <button
             type="button"
-            className="hamburger"
+            className={`hamburger${mobileOpen ? ' is-open' : ''}`}
             id="hamburger"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             onClick={toggleMobile}
           >
-            <span
-              style={
-                mobileOpen ? { transform: 'rotate(45deg) translate(5px,5px)' } : undefined
-              }
-            />
-            <span style={mobileOpen ? { opacity: 0 } : undefined} />
-            <span
-              style={
-                mobileOpen ? { transform: 'rotate(-45deg) translate(5px,-5px)' } : undefined
-              }
-            />
+            <span />
+            <span />
+            <span />
           </button>
         </div>
 
@@ -191,52 +178,87 @@ export function TopbarNav() {
           role="dialog"
           aria-modal="true"
           aria-label="Site menu"
-          hidden={!mobileOpen}
           onClick={(e) => {
             if (e.target === e.currentTarget) closeMobile();
           }}
         >
-          <div className="mobile-nav-panel">
-            <ul>
-              <li>
-                <a href="/#about" className="mobile-link" onClick={closeMobile}>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/#services" className="mobile-link" onClick={closeMobile}>
-                  All Products
-                </a>
-              </li>
-              {PRODUCT_LINKS.map((p) => (
-                <li key={p.to} className="mob-sub">
-                  <Link to={p.to} onClick={closeMobile}>
-                    {p.label}
-                  </Link>
+          <div className="mobile-nav-panel" role="document">
+            <div className="mobile-nav-head">
+              <div>
+                <p className="mobile-nav-kicker">GSM Investment Services</p>
+                <p className="mobile-nav-title">Menu</p>
+              </div>
+              <button type="button" className="mobile-nav-close" onClick={closeMobile} aria-label="Close menu">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="mobile-nav-body">
+              <ul className="mobile-nav-list">
+                <li>
+                  <a href="/#about" onClick={closeMobile}>
+                    About Us
+                  </a>
                 </li>
-              ))}
-              <li>
-                <a href="/#who" className="mobile-link" onClick={closeMobile}>
-                  Who We Work With
-                </a>
-              </li>
-              <li>
-                <a href="/#team" className="mobile-link" onClick={closeMobile}>
-                  Our Team
-                </a>
-              </li>
-              <li>
-                <a href="/#newsletter" className="mobile-link" onClick={closeMobile}>
-                  Newsletter
-                </a>
-              </li>
-              <li>
-                <a href="/#books" className="mobile-link" onClick={closeMobile}>
-                  Books
-                </a>
-              </li>
-            </ul>
-            <div className="mob-cta">
+                <li className={`mobile-acc${mobileProductsOpen ? ' is-open' : ''}`}>
+                  <button
+                    type="button"
+                    className="mobile-acc-trigger"
+                    aria-expanded={mobileProductsOpen}
+                    aria-controls="mobile-products"
+                    onClick={() => setMobileProductsOpen((o) => !o)}
+                  >
+                    <span>Products</span>
+                    <span className="mobile-acc-chevron" aria-hidden="true">
+                      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M2.5 4.5L6 8l3.5-3.5" />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul id="mobile-products" className="mobile-acc-panel" hidden={!mobileProductsOpen}>
+                    <li>
+                      <a href="/#services" onClick={closeMobile}>
+                        All Products
+                      </a>
+                    </li>
+                    {PRODUCT_LINKS.map((p) => (
+                      <li key={p.to}>
+                        <Link to={p.to} onClick={closeMobile}>
+                          {p.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+                <li>
+                  <a href="/#who" onClick={closeMobile}>
+                    Who We Work With
+                  </a>
+                </li>
+                <li>
+                  <a href="/#team" onClick={closeMobile}>
+                    Our Team
+                  </a>
+                </li>
+                <li>
+                  <a href="/#newsletter" onClick={closeMobile}>
+                    Newsletter
+                  </a>
+                </li>
+                <li>
+                  <a href="/#books" onClick={closeMobile}>
+                    Books
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mobile-nav-foot">
+              <a className="mob-cta-gold" href="/#contact" onClick={closeMobile}>
+                Book a Consultation
+              </a>
               <a
                 className="mob-cta-primary"
                 href="https://wealthelite.in/client-login"
@@ -246,8 +268,8 @@ export function TopbarNav() {
               >
                 Client Login →
               </a>
-              <a className="mob-cta-gold" href="/#contact" onClick={closeMobile}>
-                Book a Consultation
+              <a className="mobile-nav-tel" href="tel:+919840211485">
+                Call +91 98402 11485
               </a>
             </div>
           </div>
