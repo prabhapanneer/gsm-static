@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { assetUrl } from '../lib/assetUrl';
 
-const members: {
+type Member = {
   img?: string;
   initials?: string;
   name: string;
@@ -9,7 +9,10 @@ const members: {
   bio: string;
   q: string;
   e: string;
-}[] = [
+  lead?: boolean;
+};
+
+const members: Member[] = [
   {
     img: 'img-21b77350e74a.jpg',
     name: 'Ganesan Muralidharan',
@@ -17,6 +20,7 @@ const members: {
     bio: 'Founded GSM Investment Services in 2003. With 25 years of experience in mutual fund distribution, he brings deep relationship-based guidance to every client.',
     q: 'M.Com, NISM V-A',
     e: '25 Years',
+    lead: true,
   },
   {
     img: 'img-998991eb0739.jpg',
@@ -25,6 +29,7 @@ const members: {
     bio: 'Certified Financial Planner overseeing operations, client relationships, and strategy. Author of published books on personal finance.',
     q: 'CFP, QPFP, NISM V-A, NISM XV',
     e: '7 Years',
+    lead: true,
   },
   {
     img: 'img-171ebd682110.jpg',
@@ -76,6 +81,20 @@ const members: {
   },
 ];
 
+function Photo({ m, size }: { m: Member; size: 'lg' | 'sm' }) {
+  return (
+    <div className={`ft-photo ft-photo-${size}`}>
+      {m.img ? (
+        <img src={assetUrl(`assets/images/${m.img}`)} alt="" />
+      ) : (
+        <span className="ft-initials" aria-hidden="true">
+          {m.initials}
+        </span>
+      )}
+    </div>
+  );
+}
+
 type FullTeamOverlayProps = { open: boolean; onClose: () => void };
 
 export function FullTeamOverlay({ open, onClose }: FullTeamOverlayProps) {
@@ -95,56 +114,79 @@ export function FullTeamOverlay({ open, onClose }: FullTeamOverlayProps) {
 
   if (!open) return null;
 
+  const leaders = members.filter((m) => m.lead);
+  const core = members.filter((m) => !m.lead);
+
   return (
     <div
       className="ft-overlay active"
       id="ft-overlay"
       role="dialog"
       aria-modal="true"
-      aria-label="Full team"
+      aria-labelledby="ft-title"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="ft-page">
-        <div className="ft-page-header">
+      <div className="ft-sheet">
+        <header className="ft-sheet-head">
           <div>
-            <div className="ft-page-title">The GSM Team</div>
-            <div className="ft-page-sub">8 dedicated professionals serving 600+ families across Chennai and beyond.</div>
+            <p className="ft-kicker">GSM Investment Services</p>
+            <h2 className="ft-page-title" id="ft-title">
+              The full team
+            </h2>
+            <p className="ft-page-sub">8 professionals supporting 600+ families with clarity and long-term care.</p>
           </div>
-          <button type="button" className="ft-close" onClick={onClose} aria-label="Close">
-            ✕
+          <button type="button" className="ft-close" onClick={onClose} aria-label="Close team profiles">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
           </button>
-        </div>
-        <div className="ft-grid">
-          {members.map((m) => (
-            <div className="ft-card" key={m.name}>
-              <div className="tm-avatar">
-                {m.img ? (
-                  <img src={assetUrl(`assets/images/${m.img}`)} alt={m.name} />
-                ) : (
-                  <div className="tm-initials">{m.initials}</div>
-                )}
-              </div>
-              <div className="ft-body">
-                <div className="ft-name">{m.name}</div>
-                <div className="ft-role">{m.role}</div>
-                <p className="ft-bio">{m.bio}</p>
-                <div className="ft-meta">
-                  <div className="ft-badge-row">
-                    <div className="ft-badge">
-                      <div className="ft-badge-label">Qualification</div>
-                      <div className="ft-badge-val">{m.q}</div>
-                    </div>
-                    <div className="ft-badge">
-                      <div className="ft-badge-label">Experience</div>
-                      <div className="ft-badge-val">{m.e}</div>
-                    </div>
-                  </div>
+        </header>
+
+        <div className="ft-sheet-body">
+          <div className="ft-lead-grid">
+            {leaders.map((m) => (
+              <article className="ft-lead" key={m.name}>
+                <Photo m={m} size="lg" />
+                <div className="ft-lead-copy">
+                  <p className="ft-exp">{m.e}</p>
+                  <h3 className="ft-name">{m.name}</h3>
+                  <p className="ft-role">{m.role}</p>
+                  <p className="ft-bio">{m.bio}</p>
+                  <p className="ft-qual">
+                    <span>Qualification</span> {m.q}
+                  </p>
                 </div>
-              </div>
-            </div>
-          ))}
+              </article>
+            ))}
+          </div>
+
+          <div className="ft-core-label">
+            <h3>Core team</h3>
+            <span />
+          </div>
+
+          <ul className="ft-list">
+            {core.map((m) => (
+              <li className="ft-row" key={m.name}>
+                <Photo m={m} size="sm" />
+                <div className="ft-row-main">
+                  <div className="ft-row-top">
+                    <div>
+                      <h3 className="ft-name">{m.name}</h3>
+                      <p className="ft-role">{m.role}</p>
+                    </div>
+                    <p className="ft-exp">{m.e}</p>
+                  </div>
+                  <p className="ft-bio">{m.bio}</p>
+                  <p className="ft-qual">
+                    <span>Qualification</span> {m.q}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

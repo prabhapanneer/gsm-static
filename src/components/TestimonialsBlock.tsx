@@ -65,7 +65,7 @@ export function TestimonialsBlock() {
     const track = trackRef.current;
     if (!track) return 0;
     const first = track.querySelector('.tst-slide');
-    return first ? (first as HTMLElement).offsetWidth + 24 : 0;
+    return first ? (first as HTMLElement).offsetWidth + 20 : 0;
   }, []);
 
   const maxCur = useCallback(() => Math.max(0, TOTAL - spvNow()), [spvNow]);
@@ -196,20 +196,9 @@ export function TestimonialsBlock() {
         </h2>
         <p className="sdesc">A few words from clients who have experienced our approach over the years.</p>
 
-        <div className="tst-carousel-outer" ref={outerRef} style={{ marginTop: 48, position: 'relative' }}>
-          <div className="tst-wrap" ref={wrapRef} style={{ overflow: 'hidden' }}>
-            <div
-              className="tst-track"
-              id="tstiTrack"
-              ref={trackRef}
-              style={{
-                display: 'flex',
-                gap: 24,
-                transition: 'transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94)',
-                willChange: 'transform',
-                cursor: 'grab',
-              }}
-            >
+        <div className="tst-carousel-outer" ref={outerRef}>
+          <div className="tst-wrap" ref={wrapRef}>
+            <div className="tst-track" id="tstiTrack" ref={trackRef}>
               {items.map((it) => (
                 <div className="tst-slide" key={it.name}>
                   <div className="testcard">
@@ -252,7 +241,7 @@ export function TestimonialsBlock() {
           </button>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, marginTop: 22 }}>
+        <div className="tst-nav">
           <div id="tstiDots" style={{ display: 'flex', gap: 8 }}>
             {Array.from({ length: m + 1 }, (_, i) => (
               <button
