@@ -313,9 +313,7 @@ export function MainScrollSections() {
               <span className="stag-text">Who We Work Best With</span>
             </div>
             <h2 className="sh">
-              We work best with investors who value
-              <br />
-              discipline, patience, and long-term thinking.
+              We work best with investors who value discipline, patience, and long-term thinking.
             </h2>
             <p className="sdesc">
               A strong financial relationship works well when both sides think alike. Here is the kind of
