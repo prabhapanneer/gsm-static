@@ -22,15 +22,14 @@ export type NewsletterIssue = {
 };
 
 export const NEWSLETTER_ISSUES: NewsletterIssue[] = [
-  // Example (uncomment and adjust when the first PDF is ready):
-  // {
-  //   id: '2026-08',
-  //   title: 'GSM Newsletter, August 2026',
-  //   monthLabel: 'August 2026',
-  //   description: 'Market notes, mutual fund updates, and practical planning tips.',
-  //   file: 'gsm-newsletter-2026-08.pdf',
-  //   publishedAt: '2026-08-01',
-  // },
+  {
+    id: '2026-08-sample',
+    title: 'GSM Newsletter, August 2026 (Sample)',
+    monthLabel: 'August 2026',
+    description: 'Sample edition so you can try View and Download. Replace with your real monthly PDF anytime.',
+    file: 'gsm-newsletter-2026-08-sample.pdf',
+    publishedAt: '2026-08-01',
+  },
 ];
 
 export function getNewsletterIssuesSorted(): NewsletterIssue[] {
