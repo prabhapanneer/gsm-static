@@ -17,7 +17,7 @@ export function SiteFooter() {
             </span>
           </Link>
           <p className="fbrand-desc">
-            Helping families with honest, personalised financial guidance since 2003.
+            Helping families with honest, personalised financial guidance since 2001.
           </p>
           <div className="fcontact-list">
             <p className="fcontact-item">
@@ -35,10 +35,9 @@ export function SiteFooter() {
             </p>
           </div>
           <div className="fbadges">
-            <span className="fbadge">ARN 174939</span>
+            <span className="fbadge">ARN 359899</span>
             <span className="fbadge">AMFI Registered</span>
-            <span className="fbadge">Since 2003</span>
-            <span className="fbadge">CFP</span>
+            <span className="fbadge">Since 2001</span>
           </div>
         </div>
 
@@ -66,7 +65,7 @@ export function SiteFooter() {
                 <a href="/#who">Who We Work With</a>
               </li>
               <li>
-                <a href="/#newsletter">Newsletter</a>
+                <Link to="/newsletter">Newsletter</Link>
               </li>
               <li>
                 <a href="/#books">Books</a>
@@ -85,22 +84,10 @@ export function SiteFooter() {
             <h4>Investor Tools</h4>
             <ul className="flinks">
               <li>
-                <a href="#">SIP Calculator</a>
-              </li>
-              <li>
-                <a href="#">Risk Profile Test</a>
-              </li>
-              <li>
-                <a href="#">Financial Fitness Check</a>
-              </li>
-              <li>
                 <a href="#">Check Your KYC</a>
               </li>
               <li>
                 <a href="#">Check Your PAN</a>
-              </li>
-              <li>
-                <a href="#">Pay Premium Online</a>
               </li>
               <li>
                 <a href="https://wealthelite.in/client-login" target="_blank" rel="noopener noreferrer">
@@ -113,12 +100,12 @@ export function SiteFooter() {
       </div>
 
       <div className="footer-bottom">
-        <div>© 2026 GSM Investment Services · ARN 174939</div>
+        <div>© 2026 GSM Investment Services · ARN 359899</div>
         <div>Built on trust. Guided by responsibility.</div>
       </div>
       <div className="footer-disc">
         <strong>Disclaimer:</strong> Mutual Fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. Past
-        performance is not indicative of future results. GSM Investment Services, ARN 174939, is an AMFI Registered Mutual Fund Distributor and not a SEBI Registered
+        performance is not indicative of future results. GSM Investment Services, ARN 359899, is an AMFI Registered Mutual Fund Distributor and not a SEBI Registered
         Investment Adviser. Information on this website is for general education and should not be treated as personalised investment advice.
       </div>
     </footer>

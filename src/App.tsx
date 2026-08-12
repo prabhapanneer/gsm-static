@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { SiteLayout } from './layouts/SiteLayout';
 import { HomePage } from './pages/HomePage';
+import { NewsletterPage } from './pages/NewsletterPage';
 import { ProductPage } from './pages/ProductPage';
 
 export default function App() {
@@ -9,6 +10,7 @@ export default function App() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="newsletter" element={<NewsletterPage />} />
           {/* Legacy static filenames → SPA routes (must be before :slug) */}
           <Route path="mutual-funds_v12.html" element={<Navigate to="/mutual-funds" replace />} />
           <Route path="insurance-planning_v12.html" element={<Navigate to="/insurance" replace />} />

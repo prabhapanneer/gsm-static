@@ -14,12 +14,23 @@ export function HomePage() {
   useGsmRevealAndCount();
 
   useEffect(() => {
-    if (!location.hash) return;
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useEffect(() => {
     const id = location.hash.replace(/^#/, '');
-    requestAnimationFrame(() => {
+    if (!id) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      return;
+    }
+    // Defer until layout is ready so hash targets (e.g. #books) do not race the first paint.
+    const t = window.setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  }, [location.hash]);
+    }, 50);
+    return () => window.clearTimeout(t);
+  }, [location.pathname, location.hash, location.key]);
 
   return (
     <>

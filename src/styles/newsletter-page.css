@@ -1,0 +1,223 @@
+.nl-page {
+  background: var(--cream, #f3f5f8);
+  min-height: 60vh;
+}
+
+.nl-wrap {
+  max-width: var(--content, 1120px);
+  margin: 0 auto;
+  padding: 0 var(--page-pad, 24px);
+}
+
+.nl-hero {
+  background: linear-gradient(150deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: var(--white);
+  padding: clamp(48px, 8vw, 88px) 0 clamp(40px, 6vw, 64px);
+}
+
+.nl-kicker {
+  margin: 0 0 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.nl-hero h1 {
+  margin: 0 0 14px;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.2rem, 4vw + 1rem, 3.4rem);
+  line-height: 1.12;
+  font-weight: 700;
+  color: var(--white);
+  max-width: 16ch;
+}
+
+.nl-lead {
+  margin: 0 0 28px;
+  max-width: 38rem;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 300;
+}
+
+.nl-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nl-back {
+  color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+.nl-list-section {
+  padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 8vw, 96px);
+}
+
+.nl-list-head {
+  margin-bottom: 28px;
+  max-width: 36rem;
+}
+
+.nl-list-head h2 {
+  margin: 0 0 8px;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.7rem, 2vw + 1rem, 2.2rem);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.nl-list-head p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.nl-empty {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: clamp(28px, 4vw, 40px);
+  max-width: 36rem;
+}
+
+.nl-empty h3 {
+  margin: 0 0 10px;
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  color: var(--navy);
+}
+
+.nl-empty p {
+  margin: 0 0 22px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-size: 15.5px;
+}
+
+.nl-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.nl-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(11, 31, 58, 0.05);
+}
+
+.nl-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nl-month {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.nl-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.nl-card h3 {
+  margin: 0;
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.nl-card p {
+  margin: 0;
+  flex: 1;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.nl-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.nl-btn-primary,
+.nl-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.nl-btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  border: 1px solid var(--navy);
+}
+
+.nl-btn-primary:hover {
+  background: var(--navy-mid);
+}
+
+.nl-btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid var(--border);
+}
+
+.nl-btn-secondary:hover {
+  border-color: var(--navy);
+  background: var(--cream);
+}
+
+@media (max-width: 980px) {
+  .nl-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .nl-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nl-hero h1 {
+    max-width: none;
+  }
+}

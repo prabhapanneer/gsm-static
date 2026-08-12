@@ -69,7 +69,7 @@
 .product-article h1 {
   margin: 0 0 16px;
   max-width: 16ch;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: clamp(2.4rem, 5vw + 1rem, 4rem);
   font-weight: 700;
   line-height: 1.05;
@@ -183,7 +183,7 @@
 
 .product-article h2 {
   margin: 0 0 14px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: clamp(1.55rem, 1.8vw + 1rem, 2rem);
   font-weight: 700;
   color: var(--navy);
@@ -193,7 +193,7 @@
 
 .product-article h3 {
   margin: 0 0 10px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: clamp(1.2rem, 1vw + 0.95rem, 1.45rem);
   font-weight: 700;
   color: var(--navy);

@@ -103,7 +103,7 @@ var CONTACT_API_ERROR_MESSAGES = {
           /* non-JSON body */
         }
         if (res.ok && data.ok !== false) {
-          showContactFlash('ok', 'Thank you — we received your request and will contact you soon.');
+          showContactFlash('ok', 'Thank you. We received your request and will contact you soon.');
           form.reset();
         } else {
           var code = data && data.error;
@@ -135,7 +135,7 @@ var CONTACT_API_ERROR_MESSAGES = {
   const st = params.get('contact');
   if (!st) return;
   if (st === 'sent') {
-    showContactFlash('ok', 'Thank you — we received your request and will contact you soon.');
+    showContactFlash('ok', 'Thank you. We received your request and will contact you soon.');
   } else if (st === 'error') {
     showContactFlash('err', 'Something went wrong. Please call us or try again in a moment.');
   }

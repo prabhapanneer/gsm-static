@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export function MainScrollSections() {
   return (
     <>
-      <section className="hero">
+      <section className="hero" id="home">
         <div className="hero-bg" />
         <div className="hero-grid" />
         <div className="hero-orb" />
@@ -11,7 +11,7 @@ export function MainScrollSections() {
           <div className="hero-left">
             <div className="hero-eyebrow">
               <span className="eyebrow-line" />
-              <span className="eyebrow-text">Trusted by families since 2003</span>
+              <span className="eyebrow-text">Trusted by families since 2001</span>
             </div>
             <h1>
               Helping families build wealth with clarity,
@@ -19,7 +19,7 @@ export function MainScrollSections() {
               <em>discipline,</em> and trust.
             </h1>
             <p className="hero-desc">
-              For more than 23 years, GSM Investment Services has helped families invest with purpose, protect their future, and move towards their financial goals with confidence.
+              For more than 25 years, GSM Investment Services has helped families invest with purpose, protect their future, and move towards their financial goals with confidence.
             </p>
             <div className="hero-btns">
               <a href="/#contact" className="btn-gold">
@@ -34,7 +34,7 @@ export function MainScrollSections() {
             <div className="hero-card-label">Why Clients Stay With GSM</div>
             <div className="hero-stats">
               <div className="hstat">
-                <div className="hstat-n count-anim" data-target="23">
+                <div className="hstat-n count-anim" data-target="25">
                   0
                 </div>
                 <div className="hstat-l">Years of Service</div>
@@ -62,7 +62,7 @@ export function MainScrollSections() {
               <div className="amfi-check">✓</div>
               <div>
                 <div className="amfi-t1">AMFI Registered Mutual Fund Distributor</div>
-                <div className="amfi-t2">ARN 174939 · Serving investors since May 2003</div>
+                <div className="amfi-t2">ARN 359899 · Serving investors since May 2003</div>
               </div>
             </div>
             <div className="hero-quote">
@@ -72,82 +72,81 @@ export function MainScrollSections() {
         </div>
       </section>
 
-      <div className="trust-strip">
-        <div className="trust-wrap">
-          <div className="trust-top">
-            <div>
-              <div className="trust-kicker">Why Families Trust GSM</div>
-              <h3 className="trust-title">Built on experience, clarity, and long-term trust.</h3>
-            </div>
-          </div>
-          <div className="trust-metrics">
-            <div className="tmetric reveal reveal-delay-1">
-              <div className="tmetric-label">Track Record</div>
-              <div className="tmetric-value">Since 2003</div>
-              <div className="tmetric-note">Continuity, discipline, and trust.</div>
-            </div>
-            <div className="tmetric reveal reveal-delay-2">
-              <div className="tmetric-label">Client Base</div>
-              <div className="tmetric-value">600+ Families</div>
-              <div className="tmetric-note">Across generations and life stages.</div>
-            </div>
-            <div className="tmetric reveal reveal-delay-3">
-              <div className="tmetric-label">Registration</div>
-              <div className="tmetric-value">ARN 174939</div>
-              <div className="tmetric-note">AMFI Registered Mutual Fund Distributor.</div>
-            </div>
-            <div className="tmetric reveal">
-              <div className="tmetric-label">Qualification</div>
-              <div className="tmetric-value">CFP Backed</div>
-              <div className="tmetric-note">Guidance supported by formal certification.</div>
-            </div>
-            <div className="tmetric reveal">
-              <div className="tmetric-label">Approach</div>
-              <div className="tmetric-value">Transparent</div>
-              <div className="tmetric-note">Clear communication and honest disclosure.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <section className="about" id="about">
-        <div className="si about-layout">
-          <div className="about-copy">
+        <div className="si">
+          <div className="about-head">
             <div className="stag">
               <span className="stag-line" />
               <span className="stag-text">About GSM</span>
             </div>
-            <h2 className="sh">A firm built on clarity, trust, and relationships that last.</h2>
-            <p className="about-lead">
-              Founded in 2003 by Mr. Ganesan Muralidharan, GSM Investment Services helps families make better financial decisions — with honesty, practical guidance, and support that continues beyond a single investment.
+            <h2 className="sh">A trusted financial services firm built on clarity, trust, and long-term relationships.</h2>
+            <p className="sdesc">
+              Led by Mr. Ganesan Muralidharan, GSM Investment Services helps families make better financial decisions with honesty, clarity, and long-term guidance they can truly rely on.
             </p>
-            <blockquote className="about-quote">
-              Financial decisions become easier when they are explained clearly, connected to real life, and backed by a team that stays for the long term.
-            </blockquote>
           </div>
-          <ol className="about-steps">
-            <li className="reveal">
-              <span className="about-step-n">01</span>
-              <div>
-                <h3>What families need</h3>
-                <p>Not jargon or pressure — someone who understands their situation and explains the next step clearly.</p>
+          <div className="about-layout">
+            <div className="about-summary reveal">
+              <h3>Why families connect with GSM</h3>
+              <p>
+                Financial decisions become easier when they are explained clearly, connected to real life needs, and supported by a team that stays with the client for the long term.
+              </p>
+              <div className="about-summary-list">
+                <div className="about-summary-item">
+                  <span>•</span>
+                  <div>Clear explanations without unnecessary jargon or pressure.</div>
+                </div>
+                <div className="about-summary-item">
+                  <span>•</span>
+                  <div>Guidance that looks at the family&apos;s goals, responsibilities, and comfort with risk.</div>
+                </div>
+                <div className="about-summary-item">
+                  <span>•</span>
+                  <div>A relationship-first approach built on trust, consistency, and practical support.</div>
+                </div>
               </div>
-            </li>
-            <li className="reveal">
-              <span className="about-step-n">02</span>
-              <div>
-                <h3>What GSM does</h3>
-                <p>We understand your goals, responsibilities, and comfort with risk — then guide you with suitable solutions.</p>
+              <div className="about-mini-stats">
+                <div className="about-mini-stat">
+                  <strong>600+</strong>
+                  <span>Families served with long-term care</span>
+                </div>
               </div>
-            </li>
-            <li className="reveal">
-              <span className="about-step-n">03</span>
-              <div>
-                <h3>What you can expect</h3>
-                <p>Honest conversations, simple explanations, and support that continues over years, not transactions.</p>
+            </div>
+            <div className="about-points">
+              <div className="pillar reveal">
+                <div className="p-icon" aria-hidden="true">
+                  🎯
+                </div>
+                <div>
+                  <div className="p-title">What many families are really looking for</div>
+                  <div className="p-desc">
+                    Most families do not want complicated financial language, random product suggestions, or constant confusion about what to do next. They want someone who can understand their situation properly, explain things clearly, and guide them in a way that feels practical, trustworthy, and connected to their real life goals.
+                  </div>
+                </div>
               </div>
-            </li>
-          </ol>
+              <div className="pillar reveal">
+                <div className="p-icon" aria-hidden="true">
+                  🌱
+                </div>
+                <div>
+                  <div className="p-title">What GSM aims to do</div>
+                  <div className="p-desc">
+                    At GSM, our role is to make financial decisions simpler and more meaningful for families. We take time to understand your needs, your responsibilities, your future goals, and your comfort with risk. Then we guide you with suitable solutions, clear communication, and a long-term approach built around trust, not pressure.
+                  </div>
+                </div>
+              </div>
+              <div className="pillar reveal">
+                <div className="p-icon" aria-hidden="true">
+                  🤝
+                </div>
+                <div>
+                  <div className="p-title">What you can expect from us</div>
+                  <div className="p-desc">
+                    You can expect honest conversations, simple explanations, responsible guidance, and support that continues beyond one investment. Our focus is to help families stay organised, disciplined, and confident in their financial journey over the long term.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -207,7 +206,10 @@ export function MainScrollSections() {
                 </div>
                 <div className="guide-bubble">
                   <span className="guide-who">Client</span>
-                  <p>I want to invest ₹5,000 a month. Which fund will give good returns?</p>
+                  <p>
+                    Hello GSM, I want to invest ₹5,000 per month in mutual funds. Which fund will give me good
+                    returns?
+                  </p>
                 </div>
               </div>
 
@@ -218,7 +220,55 @@ export function MainScrollSections() {
                 <div className="guide-bubble">
                   <span className="guide-who">GSM</span>
                   <p>
-                    We can guide you — but first we need to understand your need. The right investment depends on your situation, your future needs, and how long you can stay invested.
+                    We can guide you. But before suggesting a fund, we first need to understand your goal,
+                    investment period, and comfort with risk.
+                  </p>
+                </div>
+              </div>
+
+              <div className="guide-turn gsm">
+                <div className="guide-avatar" aria-hidden="true">
+                  G
+                </div>
+                <div className="guide-bubble">
+                  <span className="guide-who">GSM</span>
+                  <p>Do you have any specific goal in mind for this investment?</p>
+                </div>
+              </div>
+
+              <div className="guide-turn client">
+                <div className="guide-avatar" aria-hidden="true">
+                  C
+                </div>
+                <div className="guide-bubble">
+                  <span className="guide-who">Client</span>
+                  <p>Not exactly. But I have a four-year-old daughter.</p>
+                </div>
+              </div>
+
+              <div className="guide-turn gsm">
+                <div className="guide-avatar" aria-hidden="true">
+                  G
+                </div>
+                <div className="guide-bubble">
+                  <span className="guide-who">GSM</span>
+                  <p>
+                    That gives us direction. We can plan the investment around her future needs, such as
+                    education, marriage, or a broader family wealth goal.
+                  </p>
+                </div>
+              </div>
+
+              <div className="guide-turn gsm">
+                <div className="guide-avatar" aria-hidden="true">
+                  G
+                </div>
+                <div className="guide-bubble">
+                  <span className="guide-who">GSM</span>
+                  <p>
+                    Before suggesting a fund, we would also understand how much you can invest comfortably,
+                    how long you can remain invested, your existing investments, and how comfortable you are
+                    with market ups and downs.
                   </p>
                 </div>
               </div>
@@ -229,7 +279,7 @@ export function MainScrollSections() {
                 </div>
                 <div className="guide-bubble">
                   <span className="guide-who">Client</span>
-                  <p>I do not have a specific goal yet. I have a daughter who is 4 years old.</p>
+                  <p>That makes sense. I thought I only had to choose a fund and start investing.</p>
                 </div>
               </div>
 
@@ -240,14 +290,15 @@ export function MainScrollSections() {
                 <div className="guide-bubble">
                   <span className="guide-who">GSM</span>
                   <p>
-                    That already gives direction. Instead of a random fund, we can plan around her future — education, marriage, or broader family wealth — after understanding your comfort with market ups and downs.
+                    That is where many people get confused. At GSM, we first understand your situation,
+                    connect the investment to a meaningful goal, and then guide you with a suitable plan.
                   </p>
                 </div>
               </div>
 
               <div className="guide-close">
                 <strong>Person first. Purpose next. Then a clear path.</strong>
-                <p>That is how GSM guides — not by naming a fund and asking you to begin.</p>
+                <p>That is how GSM guides, without simply naming a fund and asking you to begin.</p>
               </div>
             </div>
           </div>
@@ -255,43 +306,111 @@ export function MainScrollSections() {
       </section>
 
       <section className="who" id="who">
-        <div className="si who-layout">
-          <div className="who-intro">
+        <div className="si">
+          <div className="who-head">
             <div className="stag">
               <span className="stag-line" />
-              <span className="stag-text">Who We Work With</span>
+              <span className="stag-text">Who We Work Best With</span>
             </div>
             <h2 className="sh">
-              Best suited for investors who value patience and long-term thinking.
+              We work best with investors who value
+              <br />
+              discipline, patience, and long-term thinking.
             </h2>
             <p className="sdesc">
-              A strong relationship works when both sides think alike. Speak with us if you are unsure — a short discussion usually makes the fit clear.
+              A strong financial relationship works well when both sides think alike. Here is the kind of
+              investor who usually benefits most from our approach.
             </p>
-            <a href="/#contact" className="btn-navy who-cta">
-              Book a discussion
-            </a>
           </div>
-          <div className="who-cols">
-            <div className="who-col who-yes reveal">
-              <h3>A good fit if you…</h3>
-              <ul>
-                <li>Want guidance for years, not one transaction</li>
-                <li>Connect money to real goals — education, retirement, home, wealth</li>
-                <li>Prefer plain-language explanations</li>
-                <li>Believe wealth is built with patience and discipline</li>
-                <li>Stay calm through market ups and downs</li>
-                <li>Want one trusted place for funds, insurance, and bonds</li>
+
+          <div className="who-grid">
+            <div className="who-card who-card-yes reveal">
+              <div className="who-header">
+                <div className="who-badge who-badge-yes" aria-hidden="true">
+                  ✓
+                </div>
+                <div className="who-title">We may be the right fit for you if...</div>
+              </div>
+              <ul className="who-list who-list-yes">
+                <li>
+                  You are looking for someone who can guide you for many years, not just help you do one
+                  investment and disappear.
+                </li>
+                <li>
+                  You want your investments to be connected to real life goals like children&apos;s education,
+                  retirement, buying a home, or building long-term wealth.
+                </li>
+                <li>
+                  You prefer simple explanations in plain language, so you clearly understand where your
+                  money is going and why.
+                </li>
+                <li>
+                  You know that wealth is usually built slowly through patience, discipline, and regular
+                  investing, not through shortcuts.
+                </li>
+                <li>
+                  You are ready to stay calm during market ups and downs instead of reacting to every piece
+                  of news.
+                </li>
+                <li>
+                  You want one trusted place for mutual funds, insurance, bonds, and overall financial
+                  guidance.
+                </li>
+                <li>
+                  You value honesty, personal attention, and a relationship where you can comfortably ask
+                  doubts at any time.
+                </li>
+                <li>
+                  You are a working professional, business owner, retiree, homemaker, NRI, or student
+                  looking for clear financial guidance.
+                </li>
               </ul>
             </div>
-            <div className="who-col who-no reveal">
-              <h3>Less suited if you…</h3>
-              <ul>
-                <li>Expect very high returns in a short time</li>
-                <li>Want daily tips or market timing</li>
-                <li>Switch investments frequently without a plan</li>
-                <li>Judge only on cost, not ongoing guidance</li>
-                <li>Decide mainly from social media or news noise</li>
+
+            <div className="who-card who-card-no reveal">
+              <div className="who-header">
+                <div className="who-badge who-badge-no" aria-hidden="true">
+                  ✕
+                </div>
+                <div className="who-title">Our approach may not suit you if...</div>
+              </div>
+              <ul className="who-list who-list-no">
+                <li>You expect very high returns in a very short time.</li>
+                <li>You are mainly looking for quick ideas, market tips, or daily buy-and-sell guidance.</li>
+                <li>
+                  You want someone to predict every market movement or tell you exactly when the market will
+                  go up or down.
+                </li>
+                <li>You keep changing investments frequently without a proper reason or long-term plan.</li>
+                <li>
+                  You only compare based on cost and do not see value in guidance, discipline, and ongoing
+                  support.
+                </li>
+                <li>You are not comfortable giving your investments enough time to grow.</li>
+                <li>
+                  You want excitement and constant action, even when staying patient may be the better
+                  decision.
+                </li>
+                <li>
+                  You prefer to make decisions mainly based on social media, friends, news noise, or
+                  short-term market talk.
+                </li>
               </ul>
+            </div>
+          </div>
+
+          <div className="who-bottom reveal">
+            <div>
+              <div className="who-bottom-title">Not sure whether our approach suits you?</div>
+              <div className="who-bottom-text">
+                You can speak with us for a brief introductory discussion and understand how we work. Then
+                you can decide whether this relationship is right for you.
+              </div>
+            </div>
+            <div className="who-bottom-btn">
+              <a href="/#contact" className="btn-gold">
+                Book a Discussion →
+              </a>
             </div>
           </div>
         </div>
@@ -306,7 +425,7 @@ export function MainScrollSections() {
             </div>
             <h2 className="sh sh-light">Six principles. No jargon.</h2>
             <p className="sdesc sdesc-light">
-              The same simple approach that has guided our work for more than 23 years.
+              The same simple approach that has guided our work for more than 25 years.
             </p>
           </div>
           <ol className="philo-list">
@@ -314,7 +433,7 @@ export function MainScrollSections() {
               <span>01</span>
               <div>
                 <h3>Understand your life first</h3>
-                <p>Income, responsibilities, goals, time horizon, and risk comfort — before any suggestion.</p>
+                <p>Income, responsibilities, goals, time horizon, and risk comfort before any suggestion.</p>
               </div>
             </li>
             <li className="reveal">
@@ -335,14 +454,14 @@ export function MainScrollSections() {
               <span>04</span>
               <div>
                 <h3>Build for the long term</h3>
-                <p>Review, communicate, and stay available — guidance does not stop after the first investment.</p>
+                <p>Review, communicate, and stay available. Guidance does not stop after the first investment.</p>
               </div>
             </li>
             <li className="reveal">
               <span>05</span>
               <div>
                 <h3>Keep it practical</h3>
-                <p>Planning connected to what matters to your family — not just numbers on a screen.</p>
+                <p>Planning connected to what matters to your family, not just numbers on a screen.</p>
               </div>
             </li>
             <li className="reveal">
@@ -386,7 +505,9 @@ export function MainScrollSections() {
             <Link to="/mutual-funds" className="svc-row reveal">
               <span className="svc-idx">01</span>
               <span className="svc-name">Mutual Funds</span>
-              <span className="svc-desc">Wealth creation, children’s future, retirement, and tax saving.</span>
+              <span className="svc-desc">
+                Goal-based investing for wealth creation, children’s future, retirement, and tax saving.
+              </span>
               <span className="svc-go" aria-hidden="true">
                 →
               </span>
@@ -394,7 +515,9 @@ export function MainScrollSections() {
             <Link to="/insurance" className="svc-row reveal">
               <span className="svc-idx">02</span>
               <span className="svc-name">Insurance</span>
-              <span className="svc-desc">Health, term, vehicle, home, travel, and business cover.</span>
+              <span className="svc-desc">
+                Protection solutions for health, life, vehicle, home, travel, and business needs.
+              </span>
               <span className="svc-go" aria-hidden="true">
                 →
               </span>
@@ -402,7 +525,9 @@ export function MainScrollSections() {
             <Link to="/fixed-deposits-bonds" className="svc-row reveal">
               <span className="svc-idx">03</span>
               <span className="svc-name">Fixed Deposits &amp; Bonds</span>
-              <span className="svc-desc">Stability and income alongside market-linked investing.</span>
+              <span className="svc-desc">
+                Options focused on stability, regular income, and better portfolio balance.
+              </span>
               <span className="svc-go" aria-hidden="true">
                 →
               </span>
@@ -410,7 +535,9 @@ export function MainScrollSections() {
             <Link to="/capital-gain-tax-saving" className="svc-row reveal">
               <span className="svc-idx">04</span>
               <span className="svc-name">Capital Gain Tax Saving</span>
-              <span className="svc-desc">Lawful routes and practical next steps after a property sale.</span>
+              <span className="svc-desc">
+                Guidance on eligible tax-saving options and practical steps after a property sale.
+              </span>
               <span className="svc-go" aria-hidden="true">
                 →
               </span>
@@ -418,7 +545,9 @@ export function MainScrollSections() {
             <Link to="/nri-investment-services" className="svc-row reveal">
               <span className="svc-idx">05</span>
               <span className="svc-name">NRI Investment Services</span>
-              <span className="svc-desc">Onboarding, documentation, and ongoing support for India investments.</span>
+              <span className="svc-desc">
+                Support with onboarding, documentation, and managing investments in India.
+              </span>
               <span className="svc-go" aria-hidden="true">
                 →
               </span>
@@ -426,7 +555,9 @@ export function MainScrollSections() {
             <Link to="/aif-pms-sif" className="svc-row reveal">
               <span className="svc-idx">06</span>
               <span className="svc-name">AIF, PMS &amp; SIF</span>
-              <span className="svc-desc">Specialised routes — only where suitability and clarity allow.</span>
+              <span className="svc-desc">
+                Specialised investment solutions based on suitability, financial needs, and risk profile.
+              </span>
               <span className="svc-go" aria-hidden="true">
                 →
               </span>
@@ -434,7 +565,9 @@ export function MainScrollSections() {
             <Link to="/real-estate" className="svc-row reveal">
               <span className="svc-idx">07</span>
               <span className="svc-name">Real Estate</span>
-              <span className="svc-desc">Apartments and plots with focus on quality and financial fit.</span>
+              <span className="svc-desc">
+                Support for selected apartments and plots, with a focus on quality and financial suitability.
+              </span>
               <span className="svc-go" aria-hidden="true">
                 →
               </span>

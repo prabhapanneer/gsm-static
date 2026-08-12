@@ -92,14 +92,25 @@ export function TopbarNav() {
             <a href="mailto:info@gsminvestservices.com" className="topbar-mail">
               info@gsminvestservices.com
             </a>
-            <span className="arn-pill">ARN 174939</span>
+            <span className="arn-pill">ARN 359899</span>
           </div>
         </div>
       </div>
 
       <nav>
         <div className="nav-inner">
-          <Link to="/" className="logo" aria-label="GSM Investment Services" onClick={closeMobile}>
+          <Link
+            to="/"
+            className="logo"
+            aria-label="GSM Investment Services"
+            onClick={() => {
+              closeMobile();
+              if (window.location.pathname === '/' || window.location.pathname === '') {
+                window.history.replaceState(null, '', '/');
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+              }
+            }}
+          >
             <img
               src={assetUrl('assets/images/img-39d783410317.jpg')}
               alt="GSM Investment Services"
@@ -146,10 +157,15 @@ export function TopbarNav() {
               <a href="/#team">Our Team</a>
             </li>
             <li>
-              <a href="/#newsletter">Newsletter</a>
+              <Link to="/newsletter">Newsletter</Link>
             </li>
             <li>
               <a href="/#books">Books</a>
+            </li>
+            <li>
+              <a href="https://www.gsminvestservices.blog/" target="_blank" rel="noopener noreferrer">
+                Blog
+              </a>
             </li>
             <li>
               <a href="https://wealthelite.in/client-login" className="nav-cta" target="_blank" rel="noopener noreferrer">
@@ -243,13 +259,23 @@ export function TopbarNav() {
                   </a>
                 </li>
                 <li>
-                  <a href="/#newsletter" onClick={closeMobile}>
+                  <Link to="/newsletter" onClick={closeMobile}>
                     Newsletter
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="/#books" onClick={closeMobile}>
                     Books
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.gsminvestservices.blog/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeMobile}
+                  >
+                    Blog
                   </a>
                 </li>
               </ul>
