@@ -960,6 +960,10 @@ h2.sh-light { color: var(--white); }
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
+.team-slider-nav,
+.team-slider-count {
+  display: none;
+}
 .team-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -2071,6 +2075,87 @@ footer { padding: clamp(40px, 5vw, 64px) var(--page-pad) 0; }
   .hero-quote { display: none; }
   .amfi-row { align-items: flex-start; }
   .team-grid { grid-template-columns: 1fr; }
+  .team-slider {
+    position: relative;
+    margin: 0 calc(var(--page-pad) * -1);
+    padding: 0 var(--page-pad);
+  }
+  .team-slider .team-grid {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--page-pad);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .team-slider .team-grid::-webkit-scrollbar { display: none; }
+  .team-slider .team-card {
+    flex: 0 0 min(82vw, 320px);
+    scroll-snap-align: center;
+    max-width: 320px;
+  }
+  .team-slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .team-slider-arr {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+  }
+  .team-slider-arr:hover:not(:disabled) {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+  }
+  .team-slider-arr:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+  .team-slider-dots {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    max-width: min(56vw, 220px);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .team-slider-dots::-webkit-scrollbar { display: none; }
+  .team-slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: var(--border);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .team-slider-dot.on {
+    background: var(--gold);
+    transform: scale(1.15);
+  }
+  .team-slider-count {
+    display: block;
+    text-align: center;
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
   .books-grid { grid-template-columns: 1fr; }
   .books-head { max-width: none; }
   .book-cover-wrap { height: 200px; }
