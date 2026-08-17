@@ -98,14 +98,10 @@ export function BooksNewsletter() {
               Receive curated insights on mutual funds, financial planning, market updates, and practical tips,
               written in simple language, delivered monthly.
             </p>
-            <div className="newsletter-note">🔒 No spam. Unsubscribe anytime.</div>
           </div>
           <div className="newsletter-actions">
-            <a href="/#contact" className="btn-gold">
-              Subscribe Free →
-            </a>
-            <Link to="/newsletter" className="btn-ghost" style={{ color: 'rgba(255,255,255,0.7)', borderColor: 'rgba(255,255,255,0.2)' }}>
-              View Past Issues
+            <Link to="/newsletter" className="btn-gold">
+              View Our Issues →
             </Link>
           </div>
         </div>

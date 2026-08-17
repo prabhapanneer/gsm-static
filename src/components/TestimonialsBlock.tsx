@@ -37,7 +37,7 @@ const items: { text: string; av: string; name: string; desig: string }[] = [
     text: '"I have been a client of GSM for more than 8 years. Their team has a clear understanding of markets, investor behaviour, and risk appetite, and they recommend funds that are well aligned to individual goals. They stay in regular touch, review portfolios consistently, and guide clients calmly even during turbulent market periods. What I value most is their client-centric approach and their ability to combine experience, discipline, and long-term thinking."',
     av: 'RK',
     name: 'Ramkumar Kuppuswamy',
-    desig: 'Senior Manufacturing and Engineering Assistant Bank Manager',
+    desig: 'Senior Manufacturing and Engineering',
   },
   {
     text: '"I have been a client of GSM Investment Services for over a year, and my experience has been excellent. From the beginning, they took time to understand my financial goals and build a plan that felt right for me. Their communication is clear, honest, and free from unnecessary jargon or pressure. They keep me updated regularly, explain things patiently, and give me confidence that my money is being managed with genuine care."',

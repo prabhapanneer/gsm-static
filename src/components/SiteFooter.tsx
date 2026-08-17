@@ -78,16 +78,27 @@ export function SiteFooter() {
               <li>
                 <a href="/#contact">Contact</a>
               </li>
+              <li>
+                <Link to="/commission-disclosure">Commission Disclosure</Link>
+              </li>
             </ul>
           </div>
           <div className="fcol">
-            <h4>Investor Tools</h4>
+            <h4>Investor Resources</h4>
             <ul className="flinks">
               <li>
-                <a href="#">Check Your KYC</a>
+                <a href="https://www.cvlkra.com/" target="_blank" rel="noopener noreferrer">
+                  Check Your KYC
+                </a>
               </li>
               <li>
-                <a href="#">Check Your PAN</a>
+                <a
+                  href="https://eportal.incometax.gov.in/iec/foservices/#/pre-login/verifyYourPAN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Check Your PAN
+                </a>
               </li>
               <li>
                 <a href="https://wealthelite.in/client-login" target="_blank" rel="noopener noreferrer">

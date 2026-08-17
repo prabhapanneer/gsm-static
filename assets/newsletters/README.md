@@ -1,7 +1,10 @@
 # GSM Newsletter PDFs
 
-Place each monthly newsletter PDF in this folder, then add a matching entry in
-`src/data/newsletters.ts`.
+Place each monthly newsletter PDF in:
+
+`public/assets/newsletters/`
+
+Then add a matching entry in `src/data/newsletters.ts`.
 
 Suggested filename pattern:
 
@@ -15,4 +18,4 @@ Example:
 gsm-newsletter-2026-08.pdf
 ```
 
-After adding files, restart or rebuild so they are copied to `public/assets/newsletters/`.
+No sync step is required. Vite serves files from `public/` directly.

@@ -62,7 +62,7 @@ export function MainScrollSections() {
               <div className="amfi-check">✓</div>
               <div>
                 <div className="amfi-t1">AMFI Registered Mutual Fund Distributor</div>
-                <div className="amfi-t2">ARN 359899 · Serving investors since May 2003</div>
+                <div className="amfi-t2">ARN 359899 · Serving investors since May 2001</div>
               </div>
             </div>
             <div className="hero-quote">
@@ -207,7 +207,7 @@ export function MainScrollSections() {
                 <div className="guide-bubble">
                   <span className="guide-who">Client</span>
                   <p>
-                    Hello GSM, I want to invest ₹5,000 per month in mutual funds. Which fund will give me good
+                    Hello GSM, I want to invest ₹50,000 per month in mutual funds. Which fund will give me good
                     returns?
                   </p>
                 </div>

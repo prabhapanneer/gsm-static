@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/sync-public.mjs && vite",
-    "build": "node scripts/sync-public.mjs && tsc && vite build",
+    "dev": "vite",
+    "build": "tsc && vite build",
     "typecheck": "tsc",
     "preview": "vite preview"
   },
