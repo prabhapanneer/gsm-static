@@ -24,14 +24,10 @@ export function SiteFooter() {
               A-Block, F2, ABS Aswin Adhisaya, Ponnurangam St, Puzhuthivakkam, Chennai - 600091
             </p>
             <p className="fcontact-item">
-              <a href="tel:+919840211485">+91 98402 11485</a>
-              <span className="fcontact-sep" aria-hidden="true">
-                ·
-              </span>
-              <a href="tel:+919789970712">+91 97899 70712</a>
+              <a href="tel:+919790384188">+91 97903 84188</a>
             </p>
             <p className="fcontact-item">
-              <a href="mailto:info@gsminvestservices.com">info@gsminvestservices.com</a>
+              <a href="mailto:info@gsminvestmentservices.com">info@gsminvestmentservices.com</a>
             </p>
           </div>
           <div className="fbadges">

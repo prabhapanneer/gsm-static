@@ -25,7 +25,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     img: 'team/sethuraman.jpg',
     name: 'Sethuraman D.',
     role: 'Chief Relationship Officer',
-    experience: '16 Years',
+    experience: '18 Years',
   },
   {
     img: 'team/rajendran.jpg',

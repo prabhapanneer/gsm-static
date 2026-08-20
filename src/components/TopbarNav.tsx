@@ -86,11 +86,11 @@ export function TopbarNav() {
             <span>Mon – Fri · 10 AM – 6 PM</span>
           </div>
           <div className="topbar-right">
-            <a href="tel:+919840211485" className="topbar-phone">
-              +91 98402 11485
+            <a href="tel:+919790384188" className="topbar-phone">
+              +91 97903 84188
             </a>
-            <a href="mailto:info@gsminvestservices.com" className="topbar-mail">
-              info@gsminvestservices.com
+            <a href="mailto:info@gsminvestmentservices.com" className="topbar-mail">
+              info@gsminvestmentservices.com
             </a>
             <span className="arn-pill">ARN 359899</span>
           </div>
@@ -294,8 +294,8 @@ export function TopbarNav() {
               >
                 Client Login →
               </a>
-              <a className="mobile-nav-tel" href="tel:+919840211485">
-                Call +91 98402 11485
+              <a className="mobile-nav-tel" href="tel:+919790384188">
+                Call +91 97903 84188
               </a>
             </div>
           </div>
