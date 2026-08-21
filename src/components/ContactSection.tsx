@@ -1,8 +1,8 @@
 import { type FormEvent, type KeyboardEvent, useCallback, useEffect, useState } from 'react';
 import {
   CONTACT_API_ERROR_MESSAGES,
+  buildEnquiryPayload,
   getContactApiUrl,
-  isValidContactPhone,
   phoneDigitsOnly,
 } from '../lib/contactApi';
 
@@ -63,15 +63,16 @@ export function ContactSection() {
     e.preventDefault();
     e.stopPropagation();
     const form = e.currentTarget;
-    const raw = new FormData(form);
-    const payload: Record<string, string> = {};
-    raw.forEach((v, k) => {
-      payload[k] = String(v);
-    });
+    const built = buildEnquiryPayload(new FormData(form));
 
-    if (payload.phone != null && !isValidContactPhone(payload.phone)) {
-      showFlash('err', CONTACT_API_ERROR_MESSAGES.invalid_phone);
-      document.getElementById('contact-phone')?.focus();
+    if ('honeypot' in built) {
+      showFlash('ok', 'Thank you. We received your request and will contact you soon.');
+      form.reset();
+      return;
+    }
+    if ('error' in built) {
+      showFlash('err', CONTACT_API_ERROR_MESSAGES[built.error] || built.error);
+      if (built.error === 'invalid_phone') document.getElementById('contact-phone')?.focus();
       return;
     }
 
@@ -83,31 +84,37 @@ export function ContactSection() {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(built),
       });
-      let data: { ok?: boolean; error?: string } = {};
+      let data: {
+        ok?: boolean;
+        error?: string;
+        message?: string;
+        success?: boolean;
+        status?: boolean;
+      } = {};
       try {
-        data = (await res.json()) as { ok?: boolean; error?: string };
+        data = (await res.json()) as typeof data;
       } catch {
         /* non-JSON */
       }
-      if (res.ok && data.ok !== false) {
+      const failedExplicitly =
+        data.ok === false || data.success === false || data.status === false;
+      if (res.ok && !failedExplicitly) {
         showFlash('ok', 'Thank you. We received your request and will contact you soon.');
         form.reset();
       } else {
         const code = data.error;
         const msg =
           (code && CONTACT_API_ERROR_MESSAGES[code]) ||
+          data.message ||
           code ||
-          (res.status === 0 ? 'Network error.' : 'Something went wrong. Please call us or try again.');
+          'Something went wrong. Please call us or try again.';
         showFlash('err', msg);
         if (code === 'invalid_phone') document.getElementById('contact-phone')?.focus();
       }
     } catch {
-      showFlash(
-        'err',
-        'Could not reach the email service. If you are testing locally, run: cd contact-server && npm run dev',
-      );
+      showFlash('err', 'Could not submit your enquiry. Please check your connection and try again.');
     } finally {
       setBusy(false);
     }

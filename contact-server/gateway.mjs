@@ -42,8 +42,13 @@ export function getSmtpConfig() {
   return { host, port, user, pass, mailTo, mailBcc, skipEmail };
 }
 
+/** Strip CR/LF (and encoded forms) to prevent email header injection. */
 function stripCrlf(s) {
-  return String(s).replace(/[\r\n%0a%0d]/gi, '');
+  return String(s)
+    .replace(/%0d%0a/gi, '')
+    .replace(/%0a/gi, '')
+    .replace(/%0d/gi, '')
+    .replace(/[\r\n]/g, '');
 }
 
 export function redirectUrls() {

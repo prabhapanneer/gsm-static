@@ -1,3 +1,5 @@
+const DEFAULT_ENQUIRY_API = 'https://tools.yourstore.io/api/enquiry/gsm_enquiry';
+
 export function getContactApiUrl(): string {
   const fromEnv = import.meta.env.VITE_CONTACT_API?.trim();
   if (fromEnv) return fromEnv;
@@ -5,11 +7,35 @@ export function getContactApiUrl(): string {
     const w = String((window as unknown as { GSM_CONTACT_API?: string }).GSM_CONTACT_API ?? '').trim();
     if (w) return w;
   }
-  // Vite dev: same-origin /contact is proxied to contact-server (see vite.config.ts). Avoids CORS and localhost vs 127.0.0.1 issues.
-  if (import.meta.env.DEV) {
-    return '/contact';
+  return DEFAULT_ENQUIRY_API;
+}
+
+export type EnquiryPayload = {
+  name: string;
+  gsm: string;
+  guidance_topic: string;
+  preferred_mode: string;
+};
+
+/** Map contact form fields to the tools.yourstore.io enquiry API body. */
+export function buildEnquiryPayload(form: FormData): EnquiryPayload | { honeypot: true } | { error: string } {
+  if (String(form.get('website') ?? '').trim() !== '') {
+    return { honeypot: true };
   }
-  return 'http://127.0.0.1:9006/contact';
+
+  const name = String(form.get('full_name') ?? '').trim();
+  const gsm = phoneDigitsOnly(form.get('phone')).slice(0, 10);
+  const guidance_topic = String(form.get('topic') ?? '').trim();
+  const preferred_mode = String(form.get('mode') ?? '').trim();
+
+  if (!name || !gsm || !guidance_topic) {
+    return { error: 'missing_fields' };
+  }
+  if (!isValidContactPhone(gsm)) {
+    return { error: 'invalid_phone' };
+  }
+
+  return { name, gsm, guidance_topic, preferred_mode };
 }
 
 export const CONTACT_API_ERROR_MESSAGES: Record<string, string> = {
