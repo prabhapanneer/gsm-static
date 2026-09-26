@@ -89,8 +89,8 @@ export function TopbarNav() {
             <a href="tel:+919790384188" className="topbar-phone">
               +91 97903 84188
             </a>
-            <a href="mailto:info@gsminvestmentservices.com" className="topbar-mail">
-              info@gsminvestmentservices.com
+            <a href="mailto:info@gsminvestservices.com" className="topbar-mail">
+              info@gsminvestservices.com
             </a>
             <span className="arn-pill">ARN 359899</span>
           </div>
@@ -168,7 +168,7 @@ export function TopbarNav() {
               </a>
             </li>
             <li>
-              <a href="https://wealthelite.in/client-login" className="nav-cta" target="_blank" rel="noopener noreferrer">
+              <a href="https://portfolio.gsminvestservices.com/client-login" className="nav-cta" target="_blank" rel="noopener noreferrer">
                 Client Login →
               </a>
             </li>
@@ -287,7 +287,7 @@ export function TopbarNav() {
               </a>
               <a
                 className="mob-cta-primary"
-                href="https://wealthelite.in/client-login"
+                href="https://portfolio.gsminvestservices.com/client-login"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMobile}

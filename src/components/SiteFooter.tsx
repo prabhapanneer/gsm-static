@@ -27,7 +27,7 @@ export function SiteFooter() {
               <a href="tel:+919790384188">+91 97903 84188</a>
             </p>
             <p className="fcontact-item">
-              <a href="mailto:info@gsminvestmentservices.com">info@gsminvestmentservices.com</a>
+              <a href="mailto:info@gsminvestservices.com">info@gsminvestservices.com</a>
             </p>
           </div>
           <div className="fbadges">
@@ -97,7 +97,7 @@ export function SiteFooter() {
                 </a>
               </li>
               <li>
-                <a href="https://wealthelite.in/client-login" target="_blank" rel="noopener noreferrer">
+                <a href="https://portfolio.gsminvestservices.com/client-login" target="_blank" rel="noopener noreferrer">
                   Client Login
                 </a>
               </li>

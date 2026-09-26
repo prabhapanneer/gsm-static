@@ -18,7 +18,7 @@ const lines = [
   '- Practical planning tips for families',
   '',
   'www.gsminvestservices.blog',
-  'info@gsminvestmentservices.com',
+  'info@gsminvestservices.com',
 ];
 
 function esc(s) {
