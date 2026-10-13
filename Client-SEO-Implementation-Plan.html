@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client SEO PDF Implementation Plan | GSM</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #e2e2e2;
+      --bg: #fafafa;
+      --card: #fff;
+      --accent: #0b3d2e;
+      --accent-soft: #e8f2ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 32px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 1.75rem;
+      color: var(--accent);
+    }
+    .overview {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1rem;
+    }
+    .meta {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    h2 {
+      margin: 36px 0 14px;
+      font-size: 1.25rem;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 1.05rem;
+    }
+    p, li { font-size: 0.98rem; }
+    ul, ol { padding-left: 1.25rem; }
+    li { margin: 6px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      margin: 16px 0 8px;
+      font-size: 0.92rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.88em;
+      background: #f0f0f0;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    strong { font-weight: 600; }
+    em { font-style: italic; }
+    .note {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      padding: 12px 14px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+    .checklist li { margin: 8px 0; }
+    footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media print {
+      body { background: #fff; }
+      .wrap { padding: 0; max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Client SEO PDF Implementation Plan</h1>
+      <p class="overview">
+        Implement the client's SEO PDF — Chennai-focused home title/meta/H1/hero copy,
+        keyword H1s and answer paragraphs on four product pages, and fix product eyebrows
+        from Since 2003 to Since 2001.
+      </p>
+      <p class="meta"><strong>Source:</strong> Website seo .pdf (5 pages)</p>
+    </header>
+
+    <h2>What the client asked for</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Home title</td>
+          <td><code>Best Financial Advisor in Chennai – GSM Investment Services</code></td>
+        </tr>
+        <tr>
+          <td>Home meta description</td>
+          <td>Looking for the Best financial advisor in Chennai? GSM Investment Services provides Mutual Funds, Goal Based Financial Planning, Retirement Planning, Insurance and Investment Guidance.</td>
+        </tr>
+        <tr>
+          <td>Home H1</td>
+          <td>Replace <em>Helping families build wealth…</em> with <strong>Best financial planner in Chennai for goal-based investment planning</strong></td>
+        </tr>
+        <tr>
+          <td>Home hero paragraph</td>
+          <td>Replace current short blurb with the longer “financial planner in Chennai…” copy from the PDF</td>
+        </tr>
+        <tr>
+          <td>Mutual Funds</td>
+          <td>H1 → <strong>How to invest in mutual funds</strong> + direct-answer hero; H2 <em>What mutual funds mean in simple terms</em> → <strong>What is Mutual fund</strong></td>
+        </tr>
+        <tr>
+          <td>Insurance</td>
+          <td>H1 → <strong>What is Insurance Planning and How Does It Work?</strong> + direct-answer hero</td>
+        </tr>
+        <tr>
+          <td>Capital Gain</td>
+          <td>H1 → <strong>How can I save tax on the capital gain</strong> + direct-answer hero</td>
+        </tr>
+        <tr>
+          <td>NRI</td>
+          <td>H1 → <strong>How can an NRI Invest in India</strong> + direct-answer hero</td>
+        </tr>
+        <tr>
+          <td>All product pages</td>
+          <td>Eyebrow <code>Since 2003</code> → <code>Since 2001</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">Copy will follow the PDF wording, with light casing fixes only (e.g. NRI, India, GSM).</p>
+
+    <h2>Current state (gaps)</h2>
+    <ul>
+      <li>Title only in <code>index.html</code>; <strong>no meta description</strong></li>
+      <li>Home H1/hero in <code>src/components/MainScrollSections.tsx</code></li>
+      <li>Product content + H1s live in <code>src/data/productPages.json</code> (rendered by <code>ProductPage.tsx</code>)</li>
+      <li>Product eyebrows still say <strong>Since 2003</strong>; footer already says since 2001</li>
+      <li>Title cleanup strings still use the old “Since 2003” home title</li>
+    </ul>
+
+    <h2>Implementation</h2>
+
+    <h3>1. Home page SEO + hero</h3>
+    <p><strong><code>index.html</code></strong></p>
+    <ul>
+      <li>Set <code>&lt;title&gt;</code> to the new Chennai title</li>
+      <li>Add <code>&lt;meta name="description" content="…"&gt;</code> with the client’s meta text</li>
+    </ul>
+    <p><strong><code>src/components/MainScrollSections.tsx</code></strong></p>
+    <ul>
+      <li>Replace H1 and <code>hero-desc</code> paragraph with the PDF text</li>
+      <li>Keep existing CTAs, stats card, and layout</li>
+    </ul>
+    <p><strong><code>src/pages/HomePage.tsx</code></strong></p>
+    <ul>
+      <li>On mount, set <code>document.title</code> and update/create <code>meta[name="description"]</code> so returning from product pages restores home SEO</li>
+    </ul>
+
+    <h3>2. Product page content (<code>src/data/productPages.json</code>)</h3>
+    <p>For <strong>all 7</strong> products: replace <code>GSM Investment Services | Since 2003</code> → <code>Since 2001</code>.</p>
+    <p>For these <strong>4</strong> products, update H1, hero paragraph (<code>hero-text</code>), and <code>documentTitle</code> to match the new H1:</p>
+    <ul>
+      <li><strong>mutual-funds</strong> — H1 + hero answer; rename first H2 to <code>What is Mutual fund</code></li>
+      <li><strong>insurance</strong> — H1 + hero answer</li>
+      <li><strong>capital-gain-tax-saving</strong> — H1 + hero answer</li>
+      <li><strong>nri-investment-services</strong> — H1 + hero answer</li>
+    </ul>
+    <p>Leave FDs &amp; Bonds, AIF/PMS/SIF, and Real Estate body copy unchanged (only eyebrow year).</p>
+    <p>Nav labels / quick-links stay as today (Mutual Funds, Insurance, etc.) so menus do not become long question-style H1s.</p>
+
+    <h3>3. Sync title fallbacks</h3>
+    <p>Update the default title string in:</p>
+    <ul>
+      <li><code>src/pages/ProductPage.tsx</code></li>
+      <li><code>src/pages/NewsletterPage.tsx</code></li>
+      <li><code>src/pages/CommissionDisclosurePage.tsx</code></li>
+    </ul>
+    <p>so unmount cleanup matches the new home title.</p>
+
+    <h3>4. Out of scope (not in the PDF)</h3>
+    <ul>
+      <li><code>robots.txt</code> / <code>sitemap.xml</code> / Open Graph / JSON-LD</li>
+      <li>Rewriting FD, AIF, Real Estate product H1s</li>
+      <li>Changing homepage services-card titles</li>
+      <li>Regenerating legacy <code>*_v12.html</code> (SPA uses JSON; redirects already point to clean URLs)</li>
+    </ul>
+
+    <h2>Implementation checklist</h2>
+    <ol class="checklist">
+      <li>Update <code>index.html</code> title/meta + <code>MainScrollSections</code> H1/hero + <code>HomePage</code> title/meta restore</li>
+      <li>Update <code>productPages.json</code>: Since 2001 on all; H1/hero/documentTitle (+ MF H2) for MF, Insurance, Capital Gain, NRI</li>
+      <li>Sync default <code>document.title</code> fallbacks in Product/Newsletter/Commission pages</li>
+      <li>Verify home + four product pages in browser</li>
+    </ol>
+
+    <h2>Verify after implementation</h2>
+    <ul>
+      <li>Home: title, meta description, H1, hero paragraph</li>
+      <li><code>/mutual-funds</code>, <code>/insurance</code>, <code>/capital-gain-tax-saving</code>, <code>/nri-investment-services</code>: new H1 + hero; MF first H2 rename</li>
+      <li>Any product page: eyebrow shows <strong>Since 2001</strong></li>
+      <li>Navigate home → product → home: title/meta restore correctly</li>
+    </ul>
+
+    <footer>
+      GSM Investment Services — Client SEO Implementation Plan
+    </footer>
+  </div>
+</body>
+</html>

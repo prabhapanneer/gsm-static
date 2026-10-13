@@ -11,7 +11,7 @@ export function NewsletterPage() {
     document.title = 'Newsletter Archive | GSM Investment Services';
     window.scrollTo(0, 0);
     return () => {
-      document.title = 'GSM Investment Services | Trusted Financial Guidance Since 2003';
+      document.title = 'Best Financial Advisor in Chennai – GSM Investment Services';
     };
   }, []);
 

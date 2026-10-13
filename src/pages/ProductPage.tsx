@@ -30,7 +30,7 @@ export function ProductPage() {
       a.classList.toggle('is-active', href === `/${page.slug}`);
     });
     return () => {
-      document.title = 'GSM Investment Services | Trusted Financial Guidance Since 2003';
+      document.title = 'Best Financial Advisor in Chennai – GSM Investment Services';
     };
   }, [page]);
 

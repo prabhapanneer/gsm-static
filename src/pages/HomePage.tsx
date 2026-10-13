@@ -20,6 +20,20 @@ export function HomePage() {
   }, []);
 
   useEffect(() => {
+    const homeTitle = 'Best Financial Advisor in Chennai – GSM Investment Services';
+    const homeDescription =
+      'Looking for the Best financial advisor in Chennai? GSM Investment Services provides Mutual Funds, Goal Based Financial Planning, Retirement Planning, Insurance and Investment Guidance.';
+    document.title = homeTitle;
+    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.content = homeDescription;
+  }, []);
+
+  useEffect(() => {
     const id = location.hash.replace(/^#/, '');
     if (!id) {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
