@@ -30,7 +30,7 @@ export function ProductPage() {
       a.classList.toggle('is-active', href === `/${page.slug}`);
     });
     return () => {
-      document.title = 'Best Financial Advisor in Chennai – GSM Investment Services';
+      document.title = 'Best Mutual Fund Distributor in Chennai – GSM Investment Services';
     };
   }, [page]);
 

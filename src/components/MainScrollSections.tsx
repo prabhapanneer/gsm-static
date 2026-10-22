@@ -13,16 +13,24 @@ export function MainScrollSections() {
               <span className="eyebrow-line" />
               <span className="eyebrow-text">Trusted by families since 2001</span>
             </div>
-            <h1>Best financial planner in Chennai for goal-based investment planning</h1>
+            <h1>Best Financial Product Distributor in Chennai</h1>
             <p className="hero-desc">
-              If you&apos;re looking for a reliable financial planner in Chennai to assist you with making
-              informed investment choices, GSM Investment Services provides individuals and families with
-              the support they need to plan their finances in relation to real-life objectives such as wealth
-              building, your children&apos;s education, retirement, and financial security. Because of our more
-              than 25 years of experience, our method involves understanding your requirements, selecting
-              appropriate investment options, and remaining disciplined over the long term. Whatever your
-              situation may be — whether you are a salaried person, a business owner, a high-net-worth
-              individual or a non-resident Indian — we are ready to help you plan with clarity and confidence.
+              If you&apos;re looking for a reliable financial product distributor in Chennai, GSM Investment
+              Services is here to help you.
+              <br />
+              <br />
+              With over 25 years of experience, we help individuals and families understand different
+              financial products, including Mutual Funds, SIF, AIF, PMS, Insurance, Bonds, NPS and other
+              investment options.
+              <br />
+              <br />
+              Our role is to understand your requirements, explain the available products in simple terms,
+              help you choose suitable options based on your needs and comfort with risk, and assist you in
+              completing the required transactions.
+              <br />
+              <br />
+              We also provide ongoing support for your investments and financial product-related service
+              requirements.
             </p>
             <div className="hero-btns">
               <a href="/#contact" className="btn-gold">
